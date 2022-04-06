@@ -1,0 +1,3 @@
+mvn exec:java -D exec.mainClass=org.example.software-modeling.Main
+java -jar target/classes/Main com.mycompany.testapifactory.Main
+
