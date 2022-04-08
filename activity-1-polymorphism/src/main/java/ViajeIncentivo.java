@@ -23,4 +23,18 @@ public class ViajeIncentivo extends Viaje {
         long diferencia = fechaFinalMs - fechaInicialMs;
         return Math.floor(diferencia / (1000 * 60 * 60 * 24))+ this.DIAS_OBSEQUIO;
     }
+
+	/**
+	 * @return the empresa
+	 */
+	public String getEmpresa() {
+		return empresa;
+	}
+
+	/**
+	 * @param empresa the empresa to set
+	 */
+	public void setEmpresa(String empresa) {
+		this.empresa = empresa;
+	}
 }
