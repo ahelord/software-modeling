@@ -24,4 +24,9 @@ public class ViajeFamiliarTest {
     public void testDescripcion() {
         assertEquals("Viaje para disfrutar con toda tu familia", viajeFamiliar.descripcion());
     }
+    @Test
+    public void testObtenerCostoConIva() {
+        assertEquals(1450000.0,viajeFamiliar.obtenerCostoConIva(),0.0);
+    }
+
 }
