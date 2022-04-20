@@ -3,23 +3,21 @@ package co.udenar.ecs.parking.domain;
 import java.util.Date;
 
 public class ParkingMotorcycle extends Parking {
-
-	//private final double numberOfWinner = Math.random(1,1000)
-	//public double calculateCost(Date initialDate, Date finalDate, int selectedNumber) {
-	// public double checkIfWinner(int selectedNumber) {
+	private static final double priceForThreeHoursOrLess = 3000;
+	private static final double priceHour = 1000;
 	@Override
-	public double calculateCost(Date initialDate, Date finalDate) {
+	public void calculateCost(Date initialDate, Date finalDate) {
 		double hours = this.calculateHoursBetweenDates(initialDate,finalDate);
 
- 		if (hours <= 3) return 3000;
+ 		if (hours <= 3) this.setCost(priceForThreeHoursOrLess);
 		else {
 			double extra = hours-3;
 			if (extra % 1 == 0) {
-				return 3000 + (extra*1000);
+				this.setCost(priceForThreeHoursOrLess + (extra*priceHour));
 			}
 			else {
-				long iPart = (long)extra;
-				return 3000 + ((iPart + 1)*1000);
+				long integerPart = (long)extra;
+				this.setCost(priceForThreeHoursOrLess + ((integerPart + 1)*priceHour));
 			}			
 		}
 	}

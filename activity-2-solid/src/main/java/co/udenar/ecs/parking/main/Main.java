@@ -1,9 +1,6 @@
 package co.udenar.ecs.parking.main;
 
-import co.udenar.ecs.parking.domain.Parking;
-import co.udenar.ecs.parking.domain.ParkingCar;
-import co.udenar.ecs.parking.domain.VehicleEnum;
-import co.udenar.ecs.parking.domain.ParkingMotorcycle;
+import co.udenar.ecs.parking.domain.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -16,40 +13,51 @@ public class Main {
         System.out.println("running");
 
         try {
-            Parking parkingMotorcycle = new ParkingMotorcycle();
-            /*pakingCarro = new ParkingCarro()
-             * pakingCarro.calculateCost(12/12/12, 12/13/12)
-             * */
-            System.out.println("PAGO MOTO: " + parkingMotorcycle.calculateCost(
-                    new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").parse("01/05/2019 10:01:01"),
-                    new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").parse("01/05/2019 14:31:01")
-            ));
 
-            System.out.println("PAGO MOTO: " + parkingMotorcycle.calculateCost(
+            Parking parkingMotorcycleOne = new ParkingMotorcycle();
+            parkingMotorcycleOne.calculateCost(
+                    new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").parse("01/05/2019 10:01:01"),
+                    new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").parse("01/05/2019 14:31:01"));
+            Parking parkingMotorcycleTwo = new ParkingMotorcycle();
+            parkingMotorcycleTwo.calculateCost(
                     new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").parse("01/05/2019 09:01:01"),
                     new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").parse("01/05/2019 10:31:01")
-            ));
-
-
-            Parking parkingCar = new ParkingCar();
-
-            System.out.println("PAGO CARRO: " + parkingCar.calculateCost(
-                    new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").parse("01/05/2019 09:01:01"),
-                    new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").parse("01/05/2019 09:31:01"))
             );
 
-            test();
+            Parking parkingCarOne = new ParkingCar();
+            parkingCarOne.calculateCost(
+                    new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").parse("01/05/2019 09:01:01"),
+                    new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").parse("01/05/2019 11:31:01")
+            );
+            Raffle raffle = new Raffle();
+
+            Parking parkingTruckOne = new ParkingTruck(raffle, 1);
+            parkingTruckOne.calculateCost(
+                    new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").parse("01/05/2019 09:01:01"),
+                    new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").parse("03/05/2019 09:01:01")
+            );
+            Parking parkingTruckTwo = new ParkingTruck(raffle, 30);
+            parkingTruckTwo.calculateCost(
+                    new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").parse("01/05/2019 09:01:01"),
+                    new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").parse("03/05/2019 09:01:01")
+            );
+            Parking[] parkings = {
+                    parkingMotorcycleOne,
+                    parkingMotorcycleTwo,
+                    parkingCarOne,
+                    parkingTruckOne,
+                    parkingTruckTwo
+            };
+
+            for (Parking parking : parkings) {
+                System.out.println(parking.getClass().getSimpleName());
+                System.out.println(parking.getCost());
+            }
+
         } catch (ParseException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null,
                     ex);
         }
-    }
-
-    /**
-     * test method
-     */
-    public static void test() {
-        System.out.println("test method");
     }
 
 
