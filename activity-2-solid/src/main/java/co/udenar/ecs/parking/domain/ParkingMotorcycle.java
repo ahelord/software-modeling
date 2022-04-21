@@ -17,7 +17,7 @@ public class ParkingMotorcycle extends Parking {
 			}
 			else {
 				long integerPart = (long)extra;
-				this.setCost(priceForThreeHoursOrLess + ((integerPart + 1)*priceHour));
+				this.setCost(priceForThreeHoursOrLess + (integerPart * priceHour) + ((extra - integerPart)*priceHour));
 			}			
 		}
 	}
