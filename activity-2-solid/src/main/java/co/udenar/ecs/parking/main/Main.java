@@ -1,7 +1,6 @@
 package co.udenar.ecs.parking.main;
 
 import co.udenar.ecs.parking.domain.*;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.logging.Level;

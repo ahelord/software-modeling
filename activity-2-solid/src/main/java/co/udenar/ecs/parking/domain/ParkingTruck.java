@@ -33,17 +33,15 @@ public class ParkingTruck extends Parking {
 
     @Override
     public void calculateCost(Date initialDate, Date finalDate) {
-        System.out.println(this.raffle.getWinnerNumber());
-        System.out.println(this.getDrawNumber());
 
-        if (this.raffle.getWinnerNumber() == this.getDrawNumber()){
+        if (this.raffle.getWinnerNumber() == this.getDrawNumber()) {
             setCost(minimumCost);
-        }else{
+        } else {
             double hours = this.calculateHoursBetweenDates(initialDate, finalDate);
-            if (hours<24){
+            if (hours < 24) {
                 this.setCost(priceLessThanOneDay);
-            }else{
-               this.setCost(hours*priceHour);
+            } else {
+                this.setCost(hours * priceHour);
             }
         }
     }
