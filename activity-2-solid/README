@@ -5,7 +5,7 @@
 3. run app with test
 
 ```
-mvn clean install exec:java -D exec.mainClass="co.udenar.ecs.parking.main.Main"
+mvn clean install exec:java -D exec.mainClass="co.udenar.ecs.parking.main.co.software.modeling.main.Main"
 ```
 
 fecha inicio y fecha final tipo vehiculo

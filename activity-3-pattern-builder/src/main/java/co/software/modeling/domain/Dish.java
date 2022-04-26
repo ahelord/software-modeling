@@ -27,4 +27,9 @@ public class Dish {
     public void setPrice(final double price) {
         this.price = price;
     }
+
+    @Override
+    public String toString() {
+        return "Dish{" + "name=" + name + ", price=" + getPrice() + ", pathOfMultimedia=" + pathOfMultimedia + '}';
+    }
 }
