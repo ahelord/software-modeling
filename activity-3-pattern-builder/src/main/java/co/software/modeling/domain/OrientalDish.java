@@ -1,8 +1,5 @@
 package co.software.modeling.domain;
 
-import java.util.List;
-import java.util.Vector;
-
 public class OrientalDish extends Dish {
 
     OrientalDish() {
