@@ -1,33 +1,63 @@
 package co.software.modeling.domain;
 
+import java.util.ArrayList;
+
 public class ItalianDishBuilder extends DishBuilder {
-    public ItalianDish getItalianDish() {
-        return italianDish;
-    }
+    private ItalianDish italianDish;
+    private final ArrayList<Product> italianProducts = new ArrayList<Product>() {
+        {
+            add(new Product(1, "spaghetti", 10000d, true));
+            add(new Product(2, "meatballs", 9000d, false));
+            add(new Product(3, "parmesan cheese", 2000d, false));
 
-    public void setItalianDish(ItalianDish italianDish) {
-        this.italianDish = italianDish;
-    }
-
-    public ItalianDish italianDish;
+        }
+    };
+    ArrayList<Product> bases;
+    ArrayList<Product> options;
 
     @Override
     public DishBuilder init() {
-        return super.init();
+        dish = new ItalianDish();
+        italianDish = (ItalianDish) dish;
+        bases = new ArrayList<>();
+        options = new ArrayList<>();
+        for (Product italianProduct : italianProducts) {
+            if (italianProduct.getIsBase())
+                bases.add(italianProduct);
+            else
+                options.add(italianProduct);
+        }
+        return this;
+    }
+
+    @Override
+    public DishBuilder setName(String name) {
+        italianDish.setName(name);
+        return this;
+    }
+
+    @Override
+    public DishBuilder setPathOfMultimedia(String pathOfMultimedia) {
+        italianDish.setPathOfMultimedia(pathOfMultimedia);
+        return this;
     }
 
     @Override
     public DishBuilder setCore() {
-        return super.setCore();
+        italianDish.setBase(bases.get(0));
+        return this;
     }
 
     @Override
     public boolean addPart() {
-        return super.addPart();
+        italianDish.addOption(options.get(0));
+        italianDish.addOption(options.get(1));
+        return false;
     }
 
     @Override
     public DishBuilder setSize() {
-        return super.setSize();
+        italianDish.setSize(Size.PERSONAL);
+        return this;
     }
 }

@@ -7,16 +7,16 @@ public abstract class DishBuilder {
 
     protected Dish dish;
 
-    public  DishBuilder init(){return this;};
+    public abstract DishBuilder init();
 
-    public  DishBuilder setName(String name){return this;};
+    public abstract DishBuilder setName(String name);
 
-    public  DishBuilder setPathOfMultimedia(String pathOfMultimedia){return this;};
+    public abstract DishBuilder setPathOfMultimedia(String pathOfMultimedia);
 
-    public DishBuilder setCore(){return this;};
+    public abstract DishBuilder setCore();
 
-    public boolean addPart(){return false;};
+    public abstract boolean addPart();
 
-    public DishBuilder setSize(){return this;};
+    public abstract DishBuilder setSize();
 
 }

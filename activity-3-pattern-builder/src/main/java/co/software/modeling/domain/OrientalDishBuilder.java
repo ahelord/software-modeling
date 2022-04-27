@@ -19,7 +19,7 @@ public class OrientalDishBuilder extends DishBuilder {
 
     @Override
     public DishBuilder init() {
-        dish = new OrientalDish(0.0);
+        dish = new OrientalDish();
         orientalDish = (OrientalDish) dish;
         bases = new ArrayList<>();
         options = new ArrayList<>();
@@ -34,13 +34,13 @@ public class OrientalDishBuilder extends DishBuilder {
 
     @Override
     public DishBuilder setName(String name) {
-        dish.setName(name);
+        orientalDish.setName(name);
         return this;
     }
 
     @Override
     public DishBuilder setPathOfMultimedia(String pathOfMultimedia) {
-        dish.setPathOfMultimedia(pathOfMultimedia);
+        orientalDish.setPathOfMultimedia(pathOfMultimedia);
         return this;
     }
 

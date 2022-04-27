@@ -1,12 +1,14 @@
 package co.software.modeling.domain;
 
+import java.util.ArrayList;
+
 public class Restaurant {
 
     private String name;
 
-    private Dish[] menu;
+    private ArrayList<Dish> menu;
 
-    public Restaurant(String name, Dish[] menu) {
+    public Restaurant(String name, ArrayList<Dish> menu) {
         this.name = name;
         this.menu = menu;
     }
@@ -19,11 +21,11 @@ public class Restaurant {
         this.name = name;
     }
 
-    public Dish[] getMenu() {
+    public ArrayList<Dish> getMenu() {
         return this.menu;
     }
 
-    public void setMenu(final Dish[] dishes) {
+    public void setMenu(final ArrayList<Dish> dishes) {
         this.menu = dishes;
     }
 
