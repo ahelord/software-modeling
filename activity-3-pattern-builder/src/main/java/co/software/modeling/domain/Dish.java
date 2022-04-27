@@ -11,6 +11,10 @@ public class Dish {
     protected List<Product> options;
     protected Size size;
 
+    public Dish() {
+        this.options = new Vector<>();
+    }
+
     public Product getBase() {
         return base;
     }
@@ -33,11 +37,6 @@ public class Dish {
 
     public void setSize(Size size) {
         this.size = size;
-    }
-
-
-    public Dish() {
-        this.options = new Vector<>();
     }
 
     public String getName() {
