@@ -11,14 +11,14 @@ public class DishDirector {
         this.dishBuilder = dishBuilder;
     }
 
-    public void create(String name, String pathOfMultimedia) {
+    public void create(String name, String pathOfMultimedia, Size size) {
         boolean moreParts = true;
         dishBuilder.init();
         dishBuilder.setCore();
         while(moreParts){
             moreParts = dishBuilder.addPart();
         }
-        dishBuilder.setSize();
+        dishBuilder.setSize(size);
         dishBuilder.setName(name);
         dishBuilder.setPathOfMultimedia(pathOfMultimedia);
     }

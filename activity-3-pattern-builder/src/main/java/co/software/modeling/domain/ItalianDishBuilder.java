@@ -56,8 +56,8 @@ public class ItalianDishBuilder extends DishBuilder {
     }
 
     @Override
-    public DishBuilder setSize() {
-        italianDish.setSize(Size.PERSONAL);
+    public DishBuilder setSize(Size size) {
+        italianDish.setSize(size);
         return this;
     }
 }

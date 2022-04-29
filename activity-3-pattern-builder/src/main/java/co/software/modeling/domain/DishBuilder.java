@@ -17,6 +17,6 @@ public abstract class DishBuilder {
 
     public abstract boolean addPart();
 
-    public abstract DishBuilder setSize();
+    public abstract DishBuilder setSize(Size sise);
 
 }

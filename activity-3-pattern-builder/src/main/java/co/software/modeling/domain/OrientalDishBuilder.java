@@ -58,8 +58,8 @@ public class OrientalDishBuilder extends DishBuilder {
     }
 
     @Override
-    public DishBuilder setSize() {
-        orientalDish.setSize(Size.FAMILY);
+    public DishBuilder setSize(Size size) {
+        orientalDish.setSize(size);
         return this;
     }
 
