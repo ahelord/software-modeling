@@ -17,7 +17,6 @@ public class BeerMeasurerBuilder extends MeasurerBuilder {
         }
     };
 
-
     @Override
     public MeasurerBuilder getDataFromSensors() {
         SensorSize sensorSize = new SensorSize();

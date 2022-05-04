@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public abstract class Sensor {
 
-
     public ArrayList<Measurement> measurements;
     public String unitOfMeasurement;
     public String key;
@@ -52,10 +51,4 @@ public abstract class Sensor {
         return "Sensor { key= " + key + ",  unit of Measurement= " + unitOfMeasurement + ", expected value= " + expectedValue + "}";
     }
 }
-
-/*    public abstract String getKey();
-
-    public abstract double getValue();
-
-    public abstract void setValue(double value);*/
 

@@ -18,9 +18,6 @@ public class MeasurerDirector {
         measurerBuilder.triggerActuator();
     }
 
-    /*    public Dish getDish() {
-            return this.dishBuilder.getDish();
-        }*/
     public ArrayList<Sensor> getSensors() {
         return this.measurerBuilder.sensors;
     }

@@ -5,6 +5,11 @@ public class Beer {
     private double milliliters;
     private String name;
 
+    public Beer(int id, double milliliters, String name) {
+        this.id = id;
+        this.milliliters = milliliters;
+        this.name = name;
+    }
     public int getId() {
         return id;
     }
@@ -30,9 +35,5 @@ public class Beer {
     }
 
 
-    public Beer(int id, double milliliters, String name) {
-        this.id = id;
-        this.milliliters = milliliters;
-        this.name = name;
-    }
+
 }
