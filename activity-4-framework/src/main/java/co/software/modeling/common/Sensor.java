@@ -1,14 +1,27 @@
-package co.software.modeling.main;
+package co.software.modeling.common;
 
 import java.util.ArrayList;
 
 public abstract class Sensor {
-    protected String unitOfMeasurement;
-    protected String key;
-    protected double value;
-    protected double expectedValue;
 
-    public abstract ArrayList<Tag> assingTags();
+
+    public ArrayList<Measurement> measurements;
+    public String unitOfMeasurement;
+    public String key;
+    public double expectedValue;
+
+    public ArrayList<Measurement> getMeasurements() {
+        return measurements;
+    }
+
+    public void setMeasurements(ArrayList<Measurement> measurements) {
+        this.measurements = measurements;
+    }
+
+    void addMeasurement(Measurement measurement) {
+        getMeasurements().add(measurement);
+    }
+
 
     public String getUnitOfMeasurement() {
         return unitOfMeasurement;
@@ -26,14 +39,6 @@ public abstract class Sensor {
         this.key = key;
     }
 
-    public double getValue() {
-        return value;
-    }
-
-    public void setValue(double value) {
-        this.value = value;
-    }
-
     public double getExpectedValue() {
         return expectedValue;
     }
@@ -42,10 +47,15 @@ public abstract class Sensor {
         this.expectedValue = expectedValue;
     }
 
+    @Override
+    public String toString() {
+        return "Sensor { key= " + key + ",  unit of Measurement= " + unitOfMeasurement + ", expected value= " + expectedValue + "}";
+    }
+}
 
 /*    public abstract String getKey();
 
     public abstract double getValue();
 
     public abstract void setValue(double value);*/
-}
+
