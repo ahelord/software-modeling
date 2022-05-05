@@ -1,12 +1,10 @@
 package co.software.modeling.main;
 
-import co.software.modeling.common.Product;
-
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.io.IOException;
+import java.util.concurrent.TimeoutException;
 
 public class Main {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws Exception {
         System.out.println("running");
         BeerTrigger beerTrigger = new BeerTrigger();
         long start = System.currentTimeMillis();

@@ -4,7 +4,9 @@ import co.software.modeling.common.Actuator;
 import co.software.modeling.common.Product;
 import co.software.modeling.common.Sensor;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.concurrent.TimeoutException;
 
 public abstract class MeasurerTemplate {
     protected ArrayList<Sensor> sensors;
@@ -22,16 +24,17 @@ public abstract class MeasurerTemplate {
         this.sensors = sensors;
     }
 
-    public abstract MeasurerTemplate getDataFromSensors(Product product);
+    public abstract void getDataFromSensors(Product product) throws IOException, TimeoutException;
 
     public abstract MeasurerTemplate assignTags();
 
     public abstract MeasurerTemplate triggerActuator();
 
-    public void measure(Product product) {
-        getDataFromSensors(product);
-        assignTags();
-        triggerActuator();
+    public void measure(Product product) throws IOException, TimeoutException {
+        // TODO make execution sync
+            getDataFromSensors(product);
+            //assignTags();
+            //triggerActuator();
     }
 
 }
