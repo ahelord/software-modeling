@@ -1,30 +1,24 @@
 package co.software.modeling.main;
 
 import co.software.modeling.common.Measurement;
+import co.software.modeling.common.Product;
 import co.software.modeling.common.Sensor;
 import co.software.modeling.common.Tag;
-import co.software.modeling.framework.measurer.MeasurerBuilder;
+import co.software.modeling.framework.client.MeasurerTemplate;
 
 import java.util.ArrayList;
 
-public class BeerMeasurerBuilder extends MeasurerBuilder {
-    private final ArrayList<Beer> beers = new ArrayList<>() {
-        {
-            add(new Beer(1, 220.0, "Club Colombia"));
-            add(new Beer(2, 220.0, "Tecate"));
-            add(new Beer(3, 250, "Aguila"));
-
-        }
-    };
+public class BeerMeasurer extends MeasurerTemplate {
+    // TODO init process for each product
+    // TODO implement trigger
 
     @Override
-    public MeasurerBuilder getDataFromSensors() {
+    public MeasurerTemplate getDataFromSensors(Product beer) {
         SensorSize sensorSize = new SensorSize();
         ArrayList<Measurement> measurements = new ArrayList<>();
 
-        for (Beer beer : beers) {
-            measurements.add(new Measurement(beer.getId(), beer.getMilliliters(), beer.getName()));
-        }
+        // TODO recoger de la cola
+        measurements.add(new Measurement(beer.getId(),230, beer.getName()));
         sensorSize.setMeasurements(measurements);
 
         ArrayList<Sensor> sensors = new ArrayList<>();
@@ -34,7 +28,7 @@ public class BeerMeasurerBuilder extends MeasurerBuilder {
     }
 
     @Override
-    public MeasurerBuilder assignTags() {
+    public MeasurerTemplate assignTags() {
         for (int i = 0; i < sensors.size(); i++) {
             for (int j = 0; j < sensors.get(i).measurements.size(); j++) {
                 String tagValue;
@@ -51,11 +45,12 @@ public class BeerMeasurerBuilder extends MeasurerBuilder {
     }
 
     @Override
-    public MeasurerBuilder triggerActuator() {
+    public MeasurerTemplate triggerActuator() {
         ActuatorRemoveBand actuatorRemoveBand = new ActuatorRemoveBand();
         for (int i = 0; i < sensors.size(); i++) {
             for (int j = 0; j < sensors.get(i).measurements.size(); j++) {
-                sensors.get(i).measurements.get(j).setTakeAction(actuatorRemoveBand.generateAction(sensors.get(i).measurements.get(j), sensors.get(i)));
+                sensors.get(i).measurements.get(j).setTakeAction(actuatorRemoveBand.evalAction(sensors.get(i).measurements.get(j), sensors.get(i)));
+                System.out.println(sensors.get(i).measurements.get(j).toString());
             }
         }
         return this;

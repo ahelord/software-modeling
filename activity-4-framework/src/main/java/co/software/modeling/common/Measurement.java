@@ -2,7 +2,7 @@ package co.software.modeling.common;
 
 import co.software.modeling.common.Tag;
 
-public class Measurement {
+public class Measurement  {
     private int id;
     private double value;
     private String nameOfProduct;
@@ -59,7 +59,7 @@ public class Measurement {
 
     @Override
     public String toString() {
-        return "Measurement {" + "name of product = " + nameOfProduct + ", value= " + value + ", tag = {key= " + tag.getKey() + " value= " + tag.getValue() + " take action =" + takeAction + " }}";
+        return "Measurement { id= "+ id + "name of product = " + nameOfProduct + ", value= " + value + ", tag = {key= " + tag.getKey() + " value= " + tag.getValue() + " take action =" + takeAction + " }}";
     }
 }
 

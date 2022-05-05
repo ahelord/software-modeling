@@ -9,7 +9,7 @@ public class ActuatorRemoveBand extends Actuator {
         this.key = "actuator-remove-band";
     }
 
-    public boolean generateAction(Measurement measurement, Sensor sensor) {
+    public boolean evalAction(Measurement measurement, Sensor sensor) {
         // TODO  measurement.getValue() replace to subscription that await events
         return measurement.getValue() >= sensor.getExpectedValue();
     }

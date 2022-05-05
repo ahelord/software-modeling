@@ -6,5 +6,5 @@ public abstract class Actuator {
     protected ArrayList<Sensor> sensors;
     protected String key;
 
-    public abstract boolean generateAction(Measurement measurement, Sensor sensor);
+    public abstract boolean evalAction(Measurement measurement, Sensor sensor);
 }

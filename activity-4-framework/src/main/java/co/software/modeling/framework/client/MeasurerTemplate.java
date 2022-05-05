@@ -1,11 +1,12 @@
-package co.software.modeling.framework.measurer;
+package co.software.modeling.framework.client;
 
 import co.software.modeling.common.Actuator;
+import co.software.modeling.common.Product;
 import co.software.modeling.common.Sensor;
 
 import java.util.ArrayList;
 
-public abstract class MeasurerBuilder {
+public abstract class MeasurerTemplate {
     protected ArrayList<Sensor> sensors;
     protected ArrayList<Actuator> actuators;
 
@@ -21,10 +22,16 @@ public abstract class MeasurerBuilder {
         this.sensors = sensors;
     }
 
-    public abstract MeasurerBuilder getDataFromSensors();
+    public abstract MeasurerTemplate getDataFromSensors(Product product);
 
-    public abstract MeasurerBuilder assignTags();
+    public abstract MeasurerTemplate assignTags();
 
-    public abstract MeasurerBuilder triggerActuator();
+    public abstract MeasurerTemplate triggerActuator();
+
+    public void measure(Product product) {
+        getDataFromSensors(product);
+        assignTags();
+        triggerActuator();
+    }
 
 }
