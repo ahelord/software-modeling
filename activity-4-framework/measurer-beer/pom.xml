@@ -28,17 +28,17 @@
             <artifactId>amqp-client</artifactId>
             <version>5.14.2</version>
         </dependency>
-  <!--      <dependency>
+<!--        <dependency>
             <groupId>co.common</groupId>
             <artifactId>softwaremodeling-framework-common</artifactId>
-            <version>1.0</version>
+            <version>beta</version>
             <scope>system</scope>
-            <systemPath>${basedir}/src/common/target/softwaremodeling-framework-common-beta.jar</systemPath>
+            <systemPath>${basedir}/src/libs/common/target/softwaremodeling-framework-common-beta.jar</systemPath>
         </dependency>-->
         <dependency>
             <groupId>co.common</groupId>
             <artifactId>softwaremodeling-framework-common</artifactId>
-            <version>1.0</version>
+            <version>beta</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
