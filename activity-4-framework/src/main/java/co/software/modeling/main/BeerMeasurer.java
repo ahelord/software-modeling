@@ -20,7 +20,7 @@ public class BeerMeasurer extends MeasurerTemplate {
     private final static String QUEUE_NAME = "measurement";
 
     @Override
-    public void getDataFromSensors(Product beer) throws IOException, TimeoutException {
+    public void getDataFromSensors() throws IOException, TimeoutException {
         SensorSize sensorSize = new SensorSize();
         ArrayList<Measurement> measurements = new ArrayList<>();
 

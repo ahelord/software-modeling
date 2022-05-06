@@ -15,6 +15,6 @@ public class BeerTrigger extends Trigger {
  public void newBeer(Product product) throws Exception {
      PublisherProduct.publish(product);
      SubscriberProduct.subscribe();
-     throwMeasure(product);
+     throwMeasure();
  }
 }

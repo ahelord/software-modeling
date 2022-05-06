@@ -24,15 +24,15 @@ public abstract class MeasurerTemplate {
         this.sensors = sensors;
     }
 
-    public abstract void getDataFromSensors(Product product) throws IOException, TimeoutException;
+    public abstract void getDataFromSensors() throws IOException, TimeoutException;
 
     public abstract MeasurerTemplate assignTags();
 
     public abstract MeasurerTemplate triggerActuator();
 
-    public void measure(Product product) throws IOException, TimeoutException {
+    public void measure() throws IOException, TimeoutException {
         // TODO make execution sync
-            getDataFromSensors(product);
+            getDataFromSensors();
             //assignTags();
             //triggerActuator();
     }

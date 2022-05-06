@@ -21,8 +21,8 @@ public class Trigger  {
     }
 
 
-    public void throwMeasure(Product product) throws IOException, TimeoutException {
+    public void throwMeasure() throws IOException, TimeoutException {
 
-        measurerTemplate.measure(product);
+        measurerTemplate.measure();
     }
 }
