@@ -5,8 +5,8 @@ import co.common.Product;
 public class Trigger  {
     private MeasurerTemplate measurerTemplate;
 
-    public Trigger() {
-        this.measurerTemplate = MeasurerFactory.getMeasurer();
+    public Trigger(MeasurerTemplate measurerTemplate) {
+        this.measurerTemplate = measurerTemplate;
     }
 
     public MeasurerTemplate getMeasurerTemplate() {

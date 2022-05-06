@@ -1,5 +1,7 @@
 package co.common;
 
+import co.common.Tag;
+
 public class Measurement  {
     private int id;
     private double value;

@@ -29,12 +29,6 @@
             <version>5.14.2</version>
         </dependency>
         <dependency>
-            <groupId>co.common</groupId>
-            <artifactId>common</artifactId>
-            <version>beta</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
             <groupId>co.measurer</groupId>
             <artifactId>measurer</artifactId>
             <version>beta</version>

@@ -2,13 +2,7 @@
 
 1. Install jdk 11 (Java 11)
 2. Install maven 3.8.4
-3. install dependency common
 
-```
-mvn install:install-file -Dfile="src/libs/common/target/common-beta.jar" -DgroupId="co.common" -DartifactId="common" -Dversion="beta" -Dpackaging="jar" -DgeneratePom=true
-
-
-```
 
 3. install dependency measurer
 

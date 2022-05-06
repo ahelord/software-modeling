@@ -1,19 +1,21 @@
 package co.common;
 
+import co.common.Measurement;
+
 import java.util.ArrayList;
 
 public abstract class Sensor {
 
-    public ArrayList<Measurement> measurements;
+    public ArrayList<co.common.Measurement> measurements;
     public String unitOfMeasurement;
     public String key;
     public double expectedValue;
 
-    public ArrayList<Measurement> getMeasurements() {
+    public ArrayList<co.common.Measurement> getMeasurements() {
         return measurements;
     }
 
-    public void setMeasurements(ArrayList<Measurement> measurements) {
+    public void setMeasurements(ArrayList<co.common.Measurement> measurements) {
         this.measurements = measurements;
     }
 
