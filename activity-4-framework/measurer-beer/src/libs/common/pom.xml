@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>co.common</groupId>
-    <artifactId>softwaremodeling-framework-common</artifactId>
+    <artifactId>common</artifactId>
     <version>beta</version>
 
     <properties>
@@ -22,11 +22,6 @@
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
             <version>4.5.1</version>
-        </dependency>
-        <dependency>
-            <groupId>com.rabbitmq</groupId>
-            <artifactId>amqp-client</artifactId>
-            <version>5.14.2</version>
         </dependency>
     </dependencies>
 </project>

@@ -4,7 +4,7 @@ import co.common.Measurement;
 import co.common.Product;
 import co.common.Sensor;
 import co.common.Tag;
-import co.software.modeling.framework.client.MeasurerTemplate;
+import co.measurer.MeasurerTemplate;
 
 import java.util.ArrayList;
 

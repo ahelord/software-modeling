@@ -1,7 +1,7 @@
 package co.software.modeling.main;
 
 import co.common.Product;
-import co.software.modeling.framework.client.Trigger;
+import co.measurer.Trigger;
 
 public class BeerTrigger extends Trigger {
 

@@ -1,4 +1,4 @@
-package co.software.modeling.framework.client;
+package co.measurer;
 
 import co.common.Product;
 
