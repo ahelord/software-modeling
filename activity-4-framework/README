@@ -35,18 +35,18 @@ mvn install:install-file -Dfile="libs/measurer/target/measurer-beta.jar" -Dgroup
 
 ```
 
-6. install dependency sender  in folder activity-4-framework
-
-```
-mvn install:install-file -Dfile="libs/sender/target/sender-beta.jar" -DgroupId="co.sender" -DartifactId="sender" -Dversion="beta" -Dpackaging="jar" -DgeneratePom=true
-
-
-```
-
-7. install dependency common  in folder activity-4-framework
+6. install dependency common  in folder activity-4-framework
 
 ```
 mvn install:install-file -Dfile="libs/common/target/common-beta.jar" -DgroupId="co.common" -DartifactId="common" -Dversion="beta" -Dpackaging="jar" -DgeneratePom=true
+
+
+```
+
+8. install dependency trigger  in folder activity-4-framework
+
+```
+mvn install:install-file -Dfile="libs/trigger/target/trigger-beta.jar" -DgroupId="co.trigger" -DartifactId="trigger" -Dversion="beta" -Dpackaging="jar" -DgeneratePom=true
 
 
 ```

@@ -1,39 +1,38 @@
 package co.software.modeling.main;
 
-import co.sender.SenderProduct;
+import co.common.Measurement;
+import co.measurer.MeasurementItem;
+import co.trigger.Trigger;
 
 import java.io.IOException;
+import java.util.Locale;
 import java.util.concurrent.TimeoutException;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException, IOException, TimeoutException {
-        // init
+        String[] countryCodes = Locale.getISOCountries();
+        MeasurementItem measurementItem = new MeasurementItem();
+        measurementItem.setSensor(new SensorSize());
+        measurementItem.setActuator(new ActuatorRemoveBand());
+        measurementItem.setTagger(new TaggerSize());
+        // send products
         long start = System.currentTimeMillis();
         long end = start + 5 * 1000;
         int index = 1;
         while (System.currentTimeMillis() < end) {
+            for (Measurement measurement : measurementItem.getMeasurements()) {
+                System.out.println(" ID: " + measurement.getId() + ", value: " + measurement.getValue() + " ,name: " + measurement.getNameOfProduct()
+                        + " ,take action: " + measurement.getTakeAction() + ", tag: " + measurement.getTag().getKey() + ", tag value: " + measurement.getTag().getValue());
+            }
+            Locale locale = new Locale("", countryCodes[index]);
             System.out.println(System.currentTimeMillis());
-            BeerTrigger beerTrigger = new BeerTrigger(new BeerMeasurerItem());
-            SenderProduct.send(new Beer(index,"Club Colombia"));
+            Trigger.publish(new Beer(index, "Beer of " + locale.getDisplayCountry()));
             index++;
             Thread.sleep(1000);
             // Some expensive operation on the item.
         }
-/*        System.out.println("running");
-        BeerTrigger beerTrigger = new BeerTrigger(new BeerMeasurer());
-        long start = System.currentTimeMillis();
-        long end = start + 5 * 1000;
-        int index = 1;
-        while (System.currentTimeMillis() < end) {
-            System.out.println(System.currentTimeMillis());
-            beerTrigger.newBeer(new Beer(index,"Club Colombia"));
-            index++;
-            Thread.sleep(1000);
-            // Some expensive operation on the item.
-        }*/
-/*        ItemMedicion medcerveza = miFabrica.crearItemMedicion();
-        medcerveza.setSensor (new SensorCamara(new LecturaSimple()));
-        medcerveza.setActuador (new BrazoEmpuje());*/
+        // init
+
 
     }
 }

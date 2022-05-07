@@ -55,9 +55,5 @@ public class Measurement  {
         this.nameOfProduct = nameOfProduct;
     }
 
-    @Override
-    public String toString() {
-        return "Measurement { id= "+ id + " name of product = " + nameOfProduct + ", value= " + value + ", tag = {key= " + tag.getKey() + " value= " + tag.getValue() + " } take action =" + takeAction + "}";
-    }
 }
 

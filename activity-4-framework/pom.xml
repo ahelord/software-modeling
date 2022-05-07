@@ -41,10 +41,11 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>co.sender</groupId>
-            <artifactId>sender</artifactId>
+            <groupId>co.trigger</groupId>
+            <artifactId>trigger</artifactId>
             <version>beta</version>
             <scope>compile</scope>
         </dependency>
+
     </dependencies>
 </project>
