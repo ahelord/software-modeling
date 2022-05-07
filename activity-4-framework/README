@@ -2,9 +2,59 @@
 
 1. Install jdk 11 (Java 11)
 2. Install maven 3.8.4
-3. run app with test
+3. Compile common in folder activity-4-framework
+```
+cd libs
+cd common
+mvn clean install
 
 ```
-mvn clean install exec:java -D exec.mainClass="Main"
+
+3. Compile common in folder activity-4-framework
+```
+cd libs
+cd measurer
+mvn clean install
+
+```
+
+4. Compile common in folder activity-4-framework
+```
+cd libs
+cd measurer
+mvn clean install
+
+```
+
+
+5. install dependency measurer  in folder activity-4-framework
+
+```
+mvn install:install-file -Dfile="libs/measurer/target/measurer-beta.jar" -DgroupId="co.measurer" -DartifactId="measurer" -Dversion="beta" -Dpackaging="jar" -DgeneratePom=true
+
+
+```
+
+6. install dependency common  in folder activity-4-framework
+
+```
+mvn install:install-file -Dfile="libs/common/target/common-beta.jar" -DgroupId="co.common" -DartifactId="common" -Dversion="beta" -Dpackaging="jar" -DgeneratePom=true
+
+
+```
+
+8. install dependency trigger  in folder activity-4-framework
+
+```
+mvn install:install-file -Dfile="libs/trigger/target/trigger-beta.jar" -DgroupId="co.trigger" -DartifactId="trigger" -Dversion="beta" -Dpackaging="jar" -DgeneratePom=true
+
+
+```
+
+8. run app with test in folder activity-4-framework
+
+```
+mvn clean install exec:java -D exec.mainClass="co.software.modeling.main.Main"
+
 ```
 

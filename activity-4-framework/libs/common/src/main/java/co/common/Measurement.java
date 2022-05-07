@@ -1,8 +1,6 @@
-package co.software.modeling.common;
+package co.common;
 
-import co.software.modeling.common.Tag;
-
-public class Measurement  {
+public class Measurement {
     private int id;
     private double value;
     private String nameOfProduct;
@@ -57,9 +55,5 @@ public class Measurement  {
         this.nameOfProduct = nameOfProduct;
     }
 
-    @Override
-    public String toString() {
-        return "Measurement { id= "+ id + "name of product = " + nameOfProduct + ", value= " + value + ", tag = {key= " + tag.getKey() + " value= " + tag.getValue() + " take action =" + takeAction + " }}";
-    }
 }
 

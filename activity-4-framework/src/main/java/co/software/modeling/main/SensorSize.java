@@ -1,7 +1,6 @@
 package co.software.modeling.main;
 
-import co.software.modeling.common.Sensor;
-import co.software.modeling.common.Tag;
+import co.common.Sensor;
 
 public class SensorSize extends Sensor {
 

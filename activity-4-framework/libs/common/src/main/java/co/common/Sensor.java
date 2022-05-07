@@ -1,4 +1,4 @@
-package co.software.modeling.common;
+package co.common;
 
 import java.util.ArrayList;
 
