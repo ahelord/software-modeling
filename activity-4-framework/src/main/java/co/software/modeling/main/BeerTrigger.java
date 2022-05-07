@@ -1,6 +1,5 @@
 package co.software.modeling.main;
 
-import co.common.Product;
 import co.measurer.MeasurementItemTemplate;
 import co.measurer.Trigger;
 

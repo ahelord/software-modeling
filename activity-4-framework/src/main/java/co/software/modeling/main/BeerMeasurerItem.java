@@ -2,7 +2,6 @@ package co.software.modeling.main;
 
 import co.common.Measurement;
 import co.common.Product;
-import co.common.Sensor;
 import co.common.Tag;
 import co.measurer.MeasurementItemTemplate;
 
