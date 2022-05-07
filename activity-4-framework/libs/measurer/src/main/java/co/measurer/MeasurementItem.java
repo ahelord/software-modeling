@@ -15,7 +15,6 @@ public class MeasurementItem {
     private Sensor sensor;
     private Actuator actuator;
     private ArrayList<Measurement> measurements;
-
     private Tagger tagger;
 
     public ArrayList<Measurement> getMeasurements() {

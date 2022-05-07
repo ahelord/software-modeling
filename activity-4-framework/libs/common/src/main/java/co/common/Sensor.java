@@ -4,16 +4,16 @@ import java.util.ArrayList;
 
 public abstract class Sensor {
 
-    public ArrayList<co.common.Measurement> measurements;
+    public ArrayList<Measurement> measurements;
     public String unitOfMeasurement;
     public String key;
     public double expectedValue;
 
-    public ArrayList<co.common.Measurement> getMeasurements() {
+    public ArrayList<Measurement> getMeasurements() {
         return measurements;
     }
 
-    public void setMeasurements(ArrayList<co.common.Measurement> measurements) {
+    public void setMeasurements(ArrayList<Measurement> measurements) {
         this.measurements = measurements;
     }
 
