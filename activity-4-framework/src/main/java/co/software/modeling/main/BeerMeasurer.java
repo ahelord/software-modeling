@@ -37,6 +37,9 @@ public class BeerMeasurer extends MeasurerTemplate {
         channel.queueDeclare(QUEUE_NAME, false, false, false, null);
         System.out.println(" [*] Waiting for measurment. To exit press CTRL+C");
         DeliverCallback deliverCallback = (consumerTag, delivery) -> {
+
+            // onMessage()
+            // measure()
             String measurementText = new String(delivery.getBody(), StandardCharsets.UTF_8);
 
             System.out.println(" [x] Received measurement '" + measurementText + "'");
