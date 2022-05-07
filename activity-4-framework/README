@@ -51,7 +51,7 @@ mvn install:install-file -Dfile="libs/common/target/common-beta.jar" -DgroupId="
 
 ```
 
-8. run app with test
+8. run app with test in folder activity-4-framework
 
 ```
 mvn clean install exec:java -D exec.mainClass="co.software.modeling.main.Main"
