@@ -11,11 +11,12 @@ import java.util.concurrent.TimeoutException;
 public class Main {
     public static void main(String[] args) throws InterruptedException, IOException, TimeoutException {
         String[] countryCodes = Locale.getISOCountries();
+
         MeasurementItem measurementItem = new MeasurementItem();
         measurementItem.setSensor(new SensorSize());
         measurementItem.setActuator(new ActuatorRemoveBand());
         measurementItem.setTagger(new TaggerSize());
-        // send products
+
         long start = System.currentTimeMillis();
         long end = start + 5 * 1000;
         int index = 1;
@@ -29,10 +30,6 @@ public class Main {
             Trigger.publish(new Beer(index, "Beer of " + locale.getDisplayCountry()));
             index++;
             Thread.sleep(1000);
-            // Some expensive operation on the item.
         }
-        // init
-
-
     }
 }

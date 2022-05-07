@@ -1,6 +1,6 @@
 package co.common;
 
-public class Measurement  {
+public class Measurement {
     private int id;
     private double value;
     private String nameOfProduct;
