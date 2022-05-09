@@ -2,7 +2,14 @@
 
 1. Install jdk 11 (Java 11)
 2. Install maven 3.8.4
-3. Compile common in folder activity-4-framework
+3. Run rabbitmq docker
+
+```
+docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.9-management
+
+```
+
+4. Compile common in folder activity-4-framework
 ```
 cd libs
 cd common
@@ -10,7 +17,7 @@ mvn clean install
 
 ```
 
-3. Compile common in folder activity-4-framework
+5. Compile common in folder activity-4-framework
 ```
 cd libs
 cd measurer
@@ -18,7 +25,7 @@ mvn clean install
 
 ```
 
-4. Compile common in folder activity-4-framework
+6. Compile common in folder activity-4-framework
 ```
 cd libs
 cd measurer
@@ -27,7 +34,7 @@ mvn clean install
 ```
 
 
-5. install dependency measurer  in folder activity-4-framework
+7. install dependency measurer  in folder activity-4-framework
 
 ```
 mvn install:install-file -Dfile="libs/measurer/target/measurer-beta.jar" -DgroupId="co.measurer" -DartifactId="measurer" -Dversion="beta" -Dpackaging="jar" -DgeneratePom=true
@@ -35,7 +42,7 @@ mvn install:install-file -Dfile="libs/measurer/target/measurer-beta.jar" -Dgroup
 
 ```
 
-6. install dependency common  in folder activity-4-framework
+8. install dependency common  in folder activity-4-framework
 
 ```
 mvn install:install-file -Dfile="libs/common/target/common-beta.jar" -DgroupId="co.common" -DartifactId="common" -Dversion="beta" -Dpackaging="jar" -DgeneratePom=true
@@ -43,7 +50,7 @@ mvn install:install-file -Dfile="libs/common/target/common-beta.jar" -DgroupId="
 
 ```
 
-8. install dependency trigger  in folder activity-4-framework
+9. install dependency trigger  in folder activity-4-framework
 
 ```
 mvn install:install-file -Dfile="libs/trigger/target/trigger-beta.jar" -DgroupId="co.trigger" -DartifactId="trigger" -Dversion="beta" -Dpackaging="jar" -DgeneratePom=true
@@ -51,7 +58,7 @@ mvn install:install-file -Dfile="libs/trigger/target/trigger-beta.jar" -DgroupId
 
 ```
 
-8. run app with test in folder activity-4-framework
+10. run app with test in folder activity-4-framework
 
 ```
 mvn clean install exec:java -D exec.mainClass="co.software.modeling.main.Main"
