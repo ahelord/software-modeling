@@ -10,7 +10,6 @@ public class ActuatorRemoveBand extends Actuator {
     }
 
     public boolean evalAction(Measurement measurement, Sensor sensor) {
-        // TODO  measurement.getValue() replace to subscription that await events
         return measurement.getValue() >= sensor.getExpectedValue();
     }
 }
