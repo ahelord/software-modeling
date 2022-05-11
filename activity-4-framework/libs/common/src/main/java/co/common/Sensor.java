@@ -46,9 +46,5 @@ public abstract class Sensor {
         this.expectedValue = expectedValue;
     }
 
-    @Override
-    public String toString() {
-        return "Sensor { key= " + key + ",  unit of Measurement= " + unitOfMeasurement + ", expected value= " + expectedValue + "}";
-    }
 }
 
