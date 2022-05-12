@@ -1,9 +1,7 @@
 .idea
-*/target/*
+target
 /activity-1-polymorphism/nbproject/
 .classpath
 .project
 .settings
 */*.iml
-**/target/*
-**/*.iml
