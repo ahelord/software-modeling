@@ -1,24 +1,35 @@
 package co.software.modeling.main;
 
-import co.software.modeling.common.Product;
+import co.common.Measurement;
+import co.measurer.MeasurementItem;
+import co.trigger.Trigger;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.io.IOException;
+import java.util.Locale;
+import java.util.concurrent.TimeoutException;
 
 public class Main {
-    public static void main(String[] args) throws InterruptedException {
-        System.out.println("running");
-        BeerTrigger beerTrigger = new BeerTrigger();
+    public static void main(String[] args) throws InterruptedException, IOException, TimeoutException {
+        String[] countryCodes = Locale.getISOCountries();
+
+        MeasurementItem measurementItem = new MeasurementItem();
+        measurementItem.setSensor(new SensorSize());
+        measurementItem.setActuator(new ActuatorRemoveBand());
+        measurementItem.setTagger(new TaggerSize());
+
         long start = System.currentTimeMillis();
         long end = start + 5 * 1000;
         int index = 1;
         while (System.currentTimeMillis() < end) {
+            for (Measurement measurement : measurementItem.getMeasurements()) {
+                System.out.println(" ID: " + measurement.getId() + ", value: " + measurement.getValue() + " ,name: " + measurement.getNameOfProduct()
+                        + " ,take action: " + measurement.getTakeAction() + ", tag: " + measurement.getTag().getKey() + ", tag value: " + measurement.getTag().getValue());
+            }
+            Locale locale = new Locale("", countryCodes[index]);
             System.out.println(System.currentTimeMillis());
-            beerTrigger.newBeer(new Beer(index,"Club Colombia"));
+            Trigger.publish(new Beer(index, "Beer of " + locale.getDisplayCountry()));
             index++;
             Thread.sleep(1000);
-            // Some expensive operation on the item.
         }
-
     }
 }

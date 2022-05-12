@@ -1,8 +1,8 @@
 package co.software.modeling.main;
 
-import co.software.modeling.common.Actuator;
-import co.software.modeling.common.Measurement;
-import co.software.modeling.common.Sensor;
+import co.common.Actuator;
+import co.common.Measurement;
+import co.common.Sensor;
 
 public class ActuatorRemoveBand extends Actuator {
     public ActuatorRemoveBand() {
@@ -10,7 +10,6 @@ public class ActuatorRemoveBand extends Actuator {
     }
 
     public boolean evalAction(Measurement measurement, Sensor sensor) {
-        // TODO  measurement.getValue() replace to subscription that await events
         return measurement.getValue() >= sensor.getExpectedValue();
     }
 }

@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>softwaremodeling-measurer-beer</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>common</artifactId>
+    <version>beta</version>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -28,24 +28,5 @@
             <artifactId>amqp-client</artifactId>
             <version>5.14.2</version>
         </dependency>
-        <dependency>
-            <groupId>co.measurer</groupId>
-            <artifactId>measurer</artifactId>
-            <version>beta</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>co.common</groupId>
-            <artifactId>common</artifactId>
-            <version>beta</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>co.trigger</groupId>
-            <artifactId>trigger</artifactId>
-            <version>beta</version>
-            <scope>compile</scope>
-        </dependency>
-
     </dependencies>
 </project>

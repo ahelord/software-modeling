@@ -1,4 +1,4 @@
-package co.software.modeling.common;
+package co.common;
 
 import java.util.ArrayList;
 
@@ -46,9 +46,5 @@ public abstract class Sensor {
         this.expectedValue = expectedValue;
     }
 
-    @Override
-    public String toString() {
-        return "Sensor { key= " + key + ",  unit of Measurement= " + unitOfMeasurement + ", expected value= " + expectedValue + "}";
-    }
 }
 

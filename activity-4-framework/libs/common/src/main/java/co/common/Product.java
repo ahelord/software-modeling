@@ -1,4 +1,4 @@
-package co.software.modeling.common;
+package co.common;
 
 public class Product {
     protected int id;
