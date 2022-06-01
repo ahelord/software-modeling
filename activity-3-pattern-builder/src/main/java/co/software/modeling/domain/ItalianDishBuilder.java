@@ -6,9 +6,9 @@ public class ItalianDishBuilder extends DishBuilder {
     private ItalianDish italianDish;
     private final ArrayList<Product> italianProducts = new ArrayList<Product>() {
         {
-            add(new Product(1, "spaghetti", 10000d, true));
+            add(new Product(1, "pasta", 10000d, true));
             add(new Product(2, "meatballs", 9000d, false));
-            add(new Product(3, "parmesan cheese", 2000d, false));
+            add(new Product(3, "shrimp", 2000d, false));
 
         }
     };
@@ -44,6 +44,7 @@ public class ItalianDishBuilder extends DishBuilder {
 
     @Override
     public DishBuilder setCore() {
+        italianDish.setType(TypePasta.RAVIOLI);
         italianDish.setBase(bases.get(0));
         return this;
     }
@@ -52,6 +53,7 @@ public class ItalianDishBuilder extends DishBuilder {
     public boolean addPart() {
         italianDish.addOption(options.get(0));
         italianDish.addOption(options.get(1));
+        italianDish.setAddParmesanCheese(true);
         return false;
     }
 

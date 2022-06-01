@@ -1,8 +1,28 @@
 package co.software.modeling.domain;
 
 public class ItalianDish extends Dish {
+
+    private TypePasta type;
+    private boolean addParmesanCheese;
+
     public ItalianDish() {
         super();
+    }
+
+    public TypePasta getType() {
+        return type;
+    }
+
+    public void setType(TypePasta type) {
+        this.type = type;
+    }
+
+    public boolean getAddParmesanCheese() {
+        return addParmesanCheese;
+    }
+
+    public void setAddParmesanCheese(boolean addParmesanCheese) {
+        this.addParmesanCheese = addParmesanCheese;
     }
 
     @Override
